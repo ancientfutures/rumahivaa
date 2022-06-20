@@ -1,1 +1,1 @@
-This my first time using git.
+Learn: Next JS, Prisma, Postgres with heroku deploy in vercel.
