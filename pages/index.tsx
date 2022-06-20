@@ -147,7 +147,7 @@ const Home = ({contact}: contacts) => {
 export default Home
 
 export const getServerSideProps: GetServerSideProps = async () =>{
-  const contacts = await prisma.contact.findMany({
+  const contact = await prisma.contact.findMany({
     select:{
       email: false,
       firstname: true,
@@ -159,7 +159,7 @@ export const getServerSideProps: GetServerSideProps = async () =>{
 
   return {
     props:{
-      contacts
+      contact
     }
   }
 }
