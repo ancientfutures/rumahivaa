@@ -1,6 +1,6 @@
 
 import type { GetServerSideProps, NextPage } from 'next'
-import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useState } from 'react'
+import { useState } from 'react'
 import { prisma } from "../lib/prisma"
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -80,8 +80,8 @@ const Home = ({contact}: contacts) => {
                 <h6 className='text-white text-md'>Visitor</h6>
             </div>
               <div className='bg-purple-100 h-screen'>
-                <ul className='p-4 ml-2 mr-2 divide-y-[1px] divide-purple-400 '>
-                  {contact.map((contacts: { id: Key | null | undefined; firstname: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; lastname: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; instance: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined} ) => (
+              <ul className='p-4 ml-2 mr-2 divide-y-[1px] divide-purple-400 '>
+                  {contact.map (contacts  => (
                     <li key={contacts.id}>
                       <div className='flex'>
                         <div className='p-1 pb-2 pt-2'>
@@ -96,7 +96,7 @@ const Home = ({contact}: contacts) => {
           </section>
           <section className='w-2/3 m-10'>
           <div className='w-full px-10'>
-                  <h2 className='text-3xl font-bold mb-10 text-left'>Welcome to Rumah IVAA</h2>
+                  <h2 className='text-2xl font-bold mb-2 text-left'>Welcome to Rumah IVAA</h2>
                   <p className='w-[50%] mb-10 text-sm text-left text-gray-600'> We are grateful for your visit, kindly take a moment to fill out your contact information and provide us with feedback. Your comments will help us improve our service delivery to you in the future.</p>
                     <form onSubmit={e => {
                       e.preventDefault()
@@ -111,23 +111,23 @@ const Home = ({contact}: contacts) => {
                             className="appearance-none border-b mb-6 md:w-1/2 border--500 p-4 text-sm py-2 " />
                        
                       
-                      <label className="flex mb-2 text-sm font-medium text-gray-800">Name Depan</label>
+                      <label className="flex mb-2 text-sm font-medium text-gray-800">First Name</label>
                       <input type="text"
-                        placeholder="Nama Depan"
+                        placeholder="First Name"
                         value={form.firstname}
                         onChange={e => setForm({ ...form, firstname: e.target.value })}
                         className="flex-wrap border-b mb-6 w-1/2 border-gray-500 p-4 text-sm  py-2 " />
                       
-                      <label className="block mb-2 text-sm font-medium text-gray-800">Name Belakang</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-800">Last Name</label>
                       <input type="text"
-                        placeholder="Nama Belakang"
+                        placeholder="last Name"
                         value={form.lastname}
                         onChange={e => setForm({ ...form, lastname: e.target.value })}
                         className="tracking-wide block border-b mb-6 w-1/2 border-gray-500 p-4 text-sm  py-2 " />
                       
-                      <label className="block mb-2 text-sm font-medium text-gray-800">Instansi</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-800">Instance</label>
                       <input type="text"
-                        placeholder="Instansi"
+                        placeholder="Instance"
                         value={form.instance}
                         onChange={e => setForm({ ...form, instance: e.target.value })}
                         className="appearance-none border-b mb-6 md:w-1/2 border-gray-500 p-4 text-sm py-2" />
