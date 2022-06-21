@@ -77,7 +77,7 @@ const Home = ({contact}: contacts) => {
           <section className='w-[25%] bg-purple-100'>
             <div className='flex justify-start items-center bg-purple-600 py-4 px-4'>
                 <span className='px-2'><Person /></span>
-                <h6 className='text-white text-md'>Pengunjung</h6>
+                <h6 className='text-white text-md'>Visitor</h6>
             </div>
               <div className='bg-purple-100 h-screen'>
                 <ul className='p-4 ml-2 mr-2 divide-y-[1px] divide-purple-400 '>
@@ -96,7 +96,8 @@ const Home = ({contact}: contacts) => {
           </section>
           <section className='w-2/3 m-10'>
           <div className='w-full px-10'>
-                  <h2 className='text-3xl font-bold mb-10 text-left'>Selamat Datang</h2>
+                  <h2 className='text-3xl font-bold mb-10 text-left'>Welcome to Rumah IVAA</h2>
+                  <p className='w-[50%] mb-10 text-sm text-left text-gray-600'> We are grateful for your visit, kindly take a moment to fill out your contact information and provide us with feedback. Your comments will help us improve our service delivery to you in the future.</p>
                     <form onSubmit={e => {
                       e.preventDefault()
                       handleSubmit(form)
