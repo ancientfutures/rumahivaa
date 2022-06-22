@@ -120,7 +120,7 @@ const Home = ({contact}: contacts) => {
                       
                       <label className="block mb-2 text-sm font-medium text-gray-800">Last Name</label>
                       <input type="text"
-                        placeholder="last Name"
+                        placeholder="Last Name"
                         value={form.lastname}
                         onChange={e => setForm({ ...form, lastname: e.target.value })}
                         className="tracking-wide block border-b mb-6 w-1/2 border-gray-500 p-4 text-sm  py-2 " />
