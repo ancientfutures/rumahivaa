@@ -79,7 +79,7 @@ const Home = ({contact}: contacts) => {
                 <span className='px-2'><Person /></span>
                 <h6 className='text-white text-md'>Visitor</h6>
             </div>
-              <div className='bg-purple-100 h-screen'>
+              <div className='bg-purple-100 min-h-screen'>
               <ul className='p-4 ml-2 mr-2 divide-y-[1px] divide-purple-400 '>
                   {contact.map (contacts  => (
                     <li key={contacts.id}>
